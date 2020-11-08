@@ -52,15 +52,15 @@ class Perceptron(object):
             errors = 0
             for xi, target in zip(X, y):
                 update = self.eta *(target - self.predict(xi))
-                self.w_[1:] +=update * xi
+                self.w_[1:] += update * xi
                 self.w_[0] += update
                 errors +=int(update != 0.0)
-                self.errors_.append(errors)
-                return self
+            self.errors_.append(errors)
+        return self
 
     def net_input(self, X):
         """Calculate net input"""
-        return np.dot(X, self.w_[1:] + self.w_[0])
+        return np.dot(X, self.w_[1:])+ self.w_[0]
 
     def predict(self, X):
         """Returns Class label after unit step"""

@@ -53,7 +53,7 @@ class IrisBinaryClassification():
         plt.ylim(xx2.min(), xx2.max())
         """plot the class examples"""
         for idx, c1 in enumerate(np.unique(y)):
-            plt.scatter(x = X[y==c1, 0],y = X[y ==c1, 1], alpha=0.8,c =colors[idx], marker = markers[idx], label = c1, edgecolors='black')
+            plt.scatter(x=X[y==c1, 0],y = X[y ==c1, 1], alpha=0.8,c =colors[idx], marker = markers[idx], label = c1, edgecolors='black')
         plt.xlabel('sepal length[cm]')
         plt.ylabel('petal length[cm]')
         plt.legend(loc='best')
